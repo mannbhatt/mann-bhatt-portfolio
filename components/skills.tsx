@@ -6,8 +6,9 @@ import { Code2, Database, Smartphone, Brain, Wrench } from 'lucide-react'
 
 const Skills = () => {
   const { ref, inView } = useInView({
-    threshold: 0.1,
+    threshold: 0.05,
     triggerOnce: true,
+    rootMargin: '100px 0px',
   })
 
   const containerVariants: Variants = {

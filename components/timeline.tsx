@@ -6,8 +6,9 @@ import { Briefcase, Award, Code } from 'lucide-react'
 
 const Timeline = () => {
   const { ref, inView } = useInView({
-    threshold: 0.1,
+    threshold: 0.05,
     triggerOnce: true,
+    rootMargin: '100px 0px',
   })
 
   const containerVariants: Variants = {

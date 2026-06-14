@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { generateResumePDF } from '@/lib/resume-generator'
 
 export default function Contact() {
-  const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true })
+  const { ref, inView } = useInView({ threshold: 0.05, triggerOnce: true, rootMargin: '100px 0px' })
   const [formState, setFormState] = useState({ name: '', email: '', message: '' })
 
   const handleResumeDownload = () => {

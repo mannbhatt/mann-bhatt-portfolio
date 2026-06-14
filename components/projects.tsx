@@ -6,8 +6,9 @@ import { ExternalLink, Github } from 'lucide-react'
 
 const Projects = () => {
   const { ref, inView } = useInView({
-    threshold: 0.2,
+    threshold: 0.02,
     triggerOnce: true,
+    rootMargin: '100px 0px',
   })
 
   const projects = [

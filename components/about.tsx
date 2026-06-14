@@ -6,8 +6,9 @@ import { Sparkles } from 'lucide-react'
 
 const About = () => {
   const { ref, inView } = useInView({
-    threshold: 0.3,
+    threshold: 0.05,
     triggerOnce: true,
+    rootMargin: '100px 0px',
   })
 
   const containerVariants = {
