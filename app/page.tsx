@@ -12,8 +12,32 @@ import Contact from '@/components/contact'
 import Footer from '@/components/footer'
 import ScrollProgress from '@/components/scroll-progress'
 
+import Script from 'next/script'
+
 export default function Page() {
   const [isLoaded, setIsLoaded] = useState(false)
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mann Bhatt",
+    "url": "https://mannbhatt.com",
+    "image": "https://mannbhatt.com/mann.jpg",
+    "sameAs": [
+      "https://github.com/mannbhatt",
+      "https://www.linkedin.com/in/mann-bhatt-04930a241",
+      "https://twitter.com/Mann_Bhatt88"
+    ],
+    "jobTitle": "Creative Technologist & Software Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Government Engineering College, Gandhinagar"
+    }
+  }
 
   useEffect(() => {
     // Wait for fonts and initial paint, then reveal with animations
@@ -29,6 +53,12 @@ export default function Page() {
 
   return (
     <>
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
       {/* Loading screen */}
       <AnimatePresence>
         {!isLoaded && (

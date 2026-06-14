@@ -11,30 +11,52 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Frontend Developer Portfolio | IT Engineering Student',
-  description: 'Modern futuristic portfolio of an IT engineering student and frontend developer specializing in React, UI/UX design, and full-stack development.',
-  generator: 'v0.app',
-  openGraph: {
-    title: 'Frontend Developer Portfolio',
-    description: 'Explore my projects, skills, and experience in web development',
-    type: 'website',
+  title: {
+    default: 'Mann Bhatt | Creative Technologist & Software Engineer',
+    template: '%s | Mann Bhatt',
   },
-  icons: {
-    icon: [
+  description: 'Portfolio of Mann Bhatt, a full-stack developer and IT engineering student specializing in React, Next.js, UI/UX design, and Machine Learning.',
+  keywords: ['Mann Bhatt', 'Frontend Developer', 'Software Engineer', 'React Developer', 'Next.js', 'Machine Learning', 'Full Stack Developer', 'Portfolio', 'Web Development'],
+  authors: [{ name: 'Mann Bhatt', url: 'https://mannbhatt.com' }], // Replace with actual URL if known
+  creator: 'Mann Bhatt',
+  metadataBase: new URL('https://mannbhatt.com'), // Replace with actual deployed URL
+  openGraph: {
+    title: 'Mann Bhatt | Creative Technologist',
+    description: 'Explore my projects, skills, and experience in web development, AI, and mobile apps.',
+    url: 'https://mannbhatt.com',
+    siteName: 'Mann Bhatt Portfolio',
+    images: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/mann.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Mann Bhatt - Creative Technologist',
       },
     ],
-    apple: '/apple-icon.png',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mann Bhatt | Creative Technologist',
+    description: 'Portfolio of Mann Bhatt, a full-stack developer and IT engineering student.',
+    creator: '@Mann_Bhatt88',
+    images: ['/mann.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: '/icon.svg',
+    apple: '/icon.svg',
   },
 }
 

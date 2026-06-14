@@ -4,15 +4,9 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react'
 import { useState } from 'react'
-import { generateResumePDF } from '@/lib/resume-generator'
-
 export default function Contact() {
   const { ref, inView } = useInView({ threshold: 0.05, triggerOnce: true, rootMargin: '100px 0px' })
   const [formState, setFormState] = useState({ name: '', email: '', message: '' })
-
-  const handleResumeDownload = () => {
-    generateResumePDF()
-  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -175,14 +169,16 @@ export default function Contact() {
           <motion.h3 variants={itemVariants} className="text-2xl md:text-3xl font-black text-black mb-6 uppercase tracking-tight">
             Download My Resume
           </motion.h3>
-          <motion.button
+          <motion.a
             variants={itemVariants}
-            onClick={handleResumeDownload}
+            href="/Mann_Bhatt_Resume_PerfectSpaced.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ x: -4, y: -4 }}
-            className="bordered-card px-12 py-4 bg-yellow-300 text-black border-4 border-black font-black text-sm uppercase hover:shadow-lg transition-all cursor-pointer"
+            className="bordered-card px-12 py-4 bg-yellow-300 text-black border-4 border-black font-black text-sm uppercase hover:shadow-lg transition-all cursor-pointer inline-block"
           >
             📄 Download PDF
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </section>

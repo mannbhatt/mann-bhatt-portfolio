@@ -39,11 +39,20 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="group">
+          <Link href="/" className="group flex items-center gap-3">
+            <motion.div
+              whileHover={{ scale: 1.05, rotate: -5 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-10 h-10 bg-black text-white flex items-center justify-center border-2 border-black group-hover:bg-cyan-400 group-hover:text-black transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                <path d="M4 20V4l8 11 8-11v16"/>
+              </svg>
+            </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-2xl font-black text-black uppercase tracking-tight"
+              className="text-2xl font-black text-black uppercase tracking-tight hidden sm:block"
             >
               Mann<span className="text-cyan-400">.</span>
             </motion.div>

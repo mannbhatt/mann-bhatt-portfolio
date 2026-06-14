@@ -2,12 +2,7 @@
 
 import { motion, Variants } from 'framer-motion'
 import { Github, Linkedin, Twitter, Download, ArrowRight } from 'lucide-react'
-import { generateResumePDF } from '@/lib/resume-generator'
-
 const Hero = () => {
-  const handleResumeDownload = () => {
-    generateResumePDF()
-  }
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -128,15 +123,17 @@ const Hero = () => {
                 View Work
                 <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </motion.a>
-              <motion.button
-                onClick={handleResumeDownload}
+              <motion.a
+                href="/Mann_Bhatt_Resume_PerfectSpaced.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ x: -4, y: -4 }}
                 whileTap={{ scale: 0.98 }}
                 className="bordered-card px-6 sm:px-8 py-3 sm:py-4 bg-white border-3 sm:border-4 border-black text-black font-black uppercase text-xs sm:text-sm tracking-wide flex items-center justify-center gap-2 group hover:shadow-lg transition-all cursor-pointer"
               >
                 <Download className="w-4 sm:w-5 h-4 sm:h-5" />
                 Resume
-              </motion.button>
+              </motion.a>
             </motion.div>
 
             {/* Social Links */}
